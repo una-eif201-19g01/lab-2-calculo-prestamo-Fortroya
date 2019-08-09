@@ -8,8 +8,20 @@
 
 #include <cstdint>
 #include <string>
-class CalculoPrestamo{
+
+class CalculoPrestamo {
     float monto;
+
+public:
+    CalculoPrestamo();
+
+    CalculoPrestamo(int64_t monto);
+
+    std::reporteCalculoPrestamo(std::string tiempoTXT, std::string porcentajeTXT);
+
+    float getMonto();
+
+    setMonto(float monto);
 };
 
 #endif //CALCULOPRESTAMO_CALCULOPRESTAMO_H
