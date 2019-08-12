@@ -10,18 +10,19 @@
 #include <string>
 
 class CalculoPrestamo {
-    float monto;
+private:
+	std::string obtenerPorcentaje();
+	float monto;
 
 public:
     CalculoPrestamo();
 
     CalculoPrestamo(int64_t monto);
 
-    std::reporteCalculoPrestamo(std::string tiempoTXT, std::string porcentajeTXT);
+    std::string reporteCalculoPrestamo();
 
     float getMonto();
 
-    setMonto(float monto);
+    void setMonto(float monto);
 };
-
 #endif //CALCULOPRESTAMO_CALCULOPRESTAMO_H
