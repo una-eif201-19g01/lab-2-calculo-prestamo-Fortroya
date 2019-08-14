@@ -1,7 +1,3 @@
-//
-// Created by Maikol Guzman  on 2019-08-08.
-//
-
 #ifndef CALCULOPRESTAMO_CALCULOPRESTAMO_H
 #define CALCULOPRESTAMO_CALCULOPRESTAMO_H
 
@@ -11,18 +7,22 @@
 
 class CalculoPrestamo {
 private:
-	std::string obtenerPorcentaje();
-	float monto;
+
+    float monto;
+
+    float obtenerPorcentaje(std::string porcentajeTXT);
+    int calcularTiempoMeses(std::string tiempoTXT);
+    float obtenerInteresMensual(float balance, float tasaAnual);
 
 public:
     CalculoPrestamo();
 
-    CalculoPrestamo(int64_t monto);
+    explicit CalculoPrestamo(int64_t monto);
 
-    std::string reporteCalculoPrestamo();
+    std::string reporteCalculoPrestamo(std::string tiempoTXT, std::string porcentajeTXT);
 
     float getMonto();
 
-    void setMonto(float monto);
+    void setMonto(float);
 };
 #endif //CALCULOPRESTAMO_CALCULOPRESTAMO_H
