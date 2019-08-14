@@ -1,3 +1,4 @@
+//lab2: Jose Sequeira H
 #include <iostream>
 #include "CalculoPrestamo.h"
 
