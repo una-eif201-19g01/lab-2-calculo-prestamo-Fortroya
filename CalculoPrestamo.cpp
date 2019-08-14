@@ -33,7 +33,7 @@ int CalculoPrestamo::calcularTiempoMeses(std::string tiempoTXT) {
     if (buscarAno > 0) {
         ano = stoi(tiempoTXT.substr(0, buscarAno));
         if (ano > 0) {
-            meses = ano + 12;
+            meses = ano * 12;
 
         }
 
@@ -45,7 +45,9 @@ int CalculoPrestamo::calcularTiempoMeses(std::string tiempoTXT) {
 }
 
 float CalculoPrestamo::obtenerInteresMensual(float balance, float tasaAnual) {
-    return (balance * (tasaAnual / 12));
+    float tasaMensual=tasaAnual/12;
+    float interes=tasaMensual*balance;
+    return interes;
 
 }
 
@@ -61,7 +63,8 @@ std::string CalculoPrestamo::reporteCalculoPrestamo(std::string tiempoTXT, std::
         balance = balanceInicial;
         balanceInicial = balance + interesMensual;
 
-        reporte = reporte + "Tasa[" + porcentajeTXT + "],Mes[" + std::to_string(meses) + "],balance inicial[" + std::to_string(balance) + "],interes[" + std::to_string(interesMensual) + "],balance nuevo[" + std::to_string(balanceInicial) + "] \n";
+        reporte = reporte + "Tasa[" + porcentajeTXT + "],Mes[" + 
+                std::to_string(m) + "],balance inicial[" + std::to_string(balance) + "],interes[" + std::to_string(interesMensual) + "],balance nuevo[" + std::to_string(balanceInicial) + "] \n";
 
     }
 
