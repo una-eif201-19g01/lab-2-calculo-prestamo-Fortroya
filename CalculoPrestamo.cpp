@@ -74,5 +74,3 @@ float CalculoPrestamo::getMonto() {
 void CalculoPrestamo::setMonto(float monto) {
     this->monto = monto;
 }
-
-
